@@ -1,13 +1,8 @@
 # Jotto
-## Demo
-NOTE: Web app code located under the "demo" directory please disregard other directories 
 
-Please login with:
+Jotto is web-based application that supports mini-game. User can play game against computer. Computer and user chooses the 5-letter word that is in dictionary. If the word is not registered in dictionary.com, the word can't be used. Jotto is turn-based game in which each player guesses a letter in each turn. If the letter is in the targeting word, number of recurrence of that letter and place of that letter is shown. The player that guess opponent's word first wins the game.
 
-username: "user@a.a"
-password: "password"
-
-Website: https://zjv7ekqecmyr5rqay2nrlw-on.drv.tw/jotto_website/Copy%20of%20index.html
+Website: https://zjv7ekqecmyr5rqay2nrlw-on.drv.tw/jotto_website/Copy%20of%20index.html (Not Supported Anymore. Used To Use AWS elastic beanstalk)
 
 ## UI
 ### Sign Up
