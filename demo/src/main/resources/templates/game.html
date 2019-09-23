@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <title>Jotto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <!--
+  <link
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  rel="stylesheet"/>
+ -->
+  <link href="../static/css/game.css" th:href="@{css/game.css}" rel="stylesheet" media="screen" />
+
+  <link rel="stylesheet" th:href="@{https://use.fontawesome.com/releases/v5.7.2/css/all.css}" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" th:href ="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css}" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+
+
+
+  <script th:src="@{http://code.jquery.com/jquery-1.9.1.js}" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+
+  <script th:src="@{http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js}" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+  </script>
+  <script th:src = "@{http://code.jquery.com/jquery.js}" src="http://code.jquery.com/jquery.js"></script>
+  <script type="text/javascript" th:src = "@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js}" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link th:href ="@{vendor/bootstrap/css/bootstrap.min.css}" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+
+
+
+</head>
+
+<body>
+<section>
+  <div class="container-fluid">
+    <form action="/menu" method="GET">
+      <div class="flex dark">
+        <button type="submit" class="bttn-dark">
+          Go Back to Menu
+        </button>
+      </div>
+    </form>
+    <div class="container">
+      <div class="row">
+
+        <!-- START COMPUTER -->
+        <div class="col-md-6">
+          <div class="card text-center">
+            <div class="title">
+              <i class="fa fa-robot" aria-hidden="true"></i>
+              <h2>Computer</h2>
+            </div>
+
+            <div class="col-md-12">
+              <table class="wordTable">
+                <tbody>
+                <tr>
+                  <td><input type="text" id="comp_letter_1" style="text-transform:uppercase" class="form-control" /></td>
+                  <td><input type="text" id="comp_letter_2" style="text-transform:uppercase" class="form-control" /></td>
+                  <td><input type="text" id="comp_letter_3" style="text-transform:uppercase" class="form-control" /></td>
+                  <td><input type="text" id="comp_letter_4" style="text-transform:uppercase" class="form-control" /></td>
+                  <td><input type="text" id="comp_letter_5" style="text-transform:uppercase" class="form-control" /></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="option">
+              <table class="Table" id="computerGuessTable">
+                <thead>
+                <tr>
+                  <th>#</th>
+                  <th>WORD</th>
+                  <th>COUNT</th>
+                </tr>
+                </thead>
+                <tbody id="computer_table"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- END COMPUTER -->
+
+        <!-- START USER -->
+        <div class="col-md-6">
+          <div class="card text-center">
+            <div class="title">
+              <div class="row">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <!-- <a href="#">Hint</a>-->
+              </div>
+              <h2>User</h2>
+            </div>
+
+            <div class="col-md-12">
+              <table class="wordTable">
+                <tbody>
+                <tr>
+                  <td><input id="user_letter_1" type="text" style="text-transform:uppercase" class="form-control" /></td>
+                  <td><input id="user_letter_2" type="text" style="text-transform:uppercase" class="form-control" /></td>
+                  <td><input id="user_letter_3" type="text" style="text-transform:uppercase" class="form-control" /></td>
+                  <td><input id="user_letter_4" type="text" style="text-transform:uppercase" class="form-control" /></td>
+                  <td><input id="user_letter_5" type="text" style="text-transform:uppercase" class="form-control" /></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="option">
+              <table class="Table" id="userGuessTable">
+                <thead>
+                <tr>
+                  <th>#</th>
+                  <th>WORD</th>
+                  <th>COUNT</th>
+                </tr>
+                </thead>
+                <tbody id="user_table"></tbody>
+              </table>
+            </div>
+
+            <div>
+              <table class="letterboard">
+                <tr>
+                  <td>A</td>
+                  <td>B</td>
+                  <td>C</td>
+
+                  <td>D</td>
+                  <td>E</td>
+                  <td>F</td>
+
+                  <td>G</td>
+                  <td>H</td>
+                  <td>I</td>
+
+                  <td>J</td>
+                  <td>K</td>
+                  <td>L</td>
+
+                  <td>M</td>
+                </tr>
+
+                <tr>
+                  <td>N</td>
+                  <td>O</td>
+                  <td>P</td>
+
+                  <td>Q</td>
+                  <td>R</td>
+                  <td>S</td>
+
+                  <td>T</td>
+                  <td>U</td>
+                  <td>V</td>
+
+                  <td>W</td>
+                  <td>X</td>
+                  <td>Y</td>
+
+                  <td>Z</td>
+                </tr>
+              </table>
+            </div>
+
+            <form class="form-inline" id="inputform2">
+              <div class="form-group">
+                <table class="inputTable">
+                  <tbody>
+                  <tr>
+                    <td>
+                      <input type="text" name="letter_1" id="letter_1" required pattern="[A-Za-z]" maxlength="1"
+                             size="2;" style="text-transform:uppercase" class="form-control" />
+                    </td>
+
+                    <td>
+                      <input type="text" name="letter_2" id="letter_2" required pattern="[A-Za-z]" maxlength="1"
+                             size="2;"style="text-transform:uppercase" class="form-control" />
+                    </td>
+
+                    <td>
+                      <input type="text" name="letter_3" id="letter_3" required pattern="[A-Za-z]" maxlength="1"
+                             size="2;" style="text-transform:uppercase"class="form-control" />
+                    </td>
+
+                    <td>
+                      <input type="text" name="letter_4" id="letter_4" required pattern="[A-Za-z]" maxlength="1"
+                             size="2;" style="text-transform:uppercase"class="form-control" />
+                    </td>
+
+                    <td>
+                      <input type="text" name="letter_5" id="letter_5" required pattern="[A-Za-z]" maxlength="1"
+                             size="2;" style="text-transform:uppercase" class="form-control" />
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button type="submit" class="bttn-dark_2" id = "submitbtn2">Enter</button>
+            </form>
+            <script type='text/javascript'>
+              /* attach a submit handler to the form */
+              $("#inputform2").submit(function (event) {
+
+                var url = ""; // the script where you handle the form input.
+
+                $.ajax({
+                  type: "POST",
+                  url: url,
+                  data: $("#inputform2").serialize(), // serializes the form's elements.
+                  success: function (data) {
+                    alert(data); // show response from the php script.
+                  }
+                });
+                /*
+                document.getElementById(letter_1).innerHTML = "";
+                document.getElementById(letter_2).innerHTML = "";*/
+
+
+                return false; // avoid to execute the actual submit of the form.
+              });
+
+
+
+
+
+            </script>
+
+
+
+          </div>
+        </div>
+      </div>
+      <!-- END USER -->
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- /*data-backdrop="static" data-keyboard="false*/ to add in modal class to disable closing-->
+<!--MODALS-->
+
+<!-- Start Secret word input modal -->
+<div class="modal fade" id="secretWordModal" tabindex="-1" role="dialog" aria-labelledby="secretWordModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h2 class="modal-title text-center" id="secretWordModalLabel">
+          🐘 Jotto 🐘
+        </h2>
+      </div>
+      <form id="inputform" name="" method="post" action="">
+        <!-- add input checking from backend -->
+        <div class="modal-body text-center">
+          <label for="label" class="col-form-label">Enter your secret word.</label>
+          <input type="text" id="secret_word" class="form-control"
+                 placeholder="5 letter word without repeating letters" maxlength="5" required pattern="[A-Za-z]{5}" />
+        </div>
+
+        <div class="modal-footer">
+          <div class="text-center">
+            <button type="reset" onclick="window.location='/menu';return false;" class="btn btn-default">
+              Close
+            </button>
+
+            <button type="submit" class="btn btn-primary" id="submitbtn">
+              OK
+            </button>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- END Secret word input modal -->
+
+<!-- START Winner modal -->
+<div class="modal fade" id="winnerModal" tabindex="-1" role="dialog" aria-labelledby="winnerModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title text-center" id="winnerModalLabel">
+          🐘 Jotto 🐘
+        </h2>
+      </div>
+      <form name="" method="get" action="/menu" th:action="@{/menu}">
+        <div class="modal-body">
+          <p>
+            &lt;Winner&gt; won!
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" action="/menu" class="btn btn-default">
+            Close
+          </button>
+          <!-- formaction="/saveData" th:formaction="@{/saveData}" for example-->
+          <button type="submit" action="/menu" class="btn btn-primary">
+            OK
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- END Winner modal -->
+
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+<script src="../static/js/input.js" th:src="@{/js/input.js}"></script>
+<script type="text/javascript" src="../static/js/game.js" th:src="@{/js/game.js}"></script>
+<p id="hello1"></p>
+</body>
+
+</html>

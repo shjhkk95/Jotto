@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pricing Table</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="game.css" />
+  </head>
+
+  <body>
+    <section>
+      <div class="container-fluid">
+        <div class="container">
+          <div class="row">
+            <!-- START COMPUTER -->
+            <div class="col-md-6">
+              <div class="card text-center">
+                <div class="title">
+                  <i class="fa fa-robot" aria-hidden="true"></i>
+                  <h2>Computer</h2>
+                </div>
+
+                <div class="col-md-12">
+                  <table class="wordTable">
+                    <tbody>
+                      <tr>
+                        <td><input type="text" class="form-control" /></td>
+                        <td><input type="text" class="form-control" /></td>
+                        <td><input type="text" class="form-control" /></td>
+                        <td><input type="text" class="form-control" /></td>
+                        <td><input type="text" class="form-control" /></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="option">
+                  <table class="Table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>WORD</th>
+                        <th>COUNT</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- END COMPUTER -->
+
+            <!-- START USER -->
+            <div class="col-md-6">
+              <div class="card text-center">
+                <div class="title">
+                  <div class="row">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <!-- <a href="#">Hint</a>-->
+                  </div>
+                  <h2>User</h2>
+                </div>
+
+                <div class="col-md-12">
+                  <table class="wordTable">
+                    <tbody>
+                      <tr>
+                        <td><input type="text" class="form-control" /></td>
+                        <td><input type="text" class="form-control" /></td>
+                        <td><input type="text" class="form-control" /></td>
+                        <td><input type="text" class="form-control" /></td>
+                        <td><input type="text" class="form-control" /></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="option">
+                  <table class="Table" id="userGuessTable">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>WORD</th>
+                        <th>COUNT</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>FGHIJ</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>KLMNO</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>ABCDE</td>
+                        <td>2</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div>
+                  <table class="letterboard">
+                    <tr>
+                      <td>A</td>
+                      <td>B</td>
+                      <td>C</td>
+
+                      <td>D</td>
+                      <td>E</td>
+                      <td>F</td>
+
+                      <td>G</td>
+                      <td>H</td>
+                      <td>I</td>
+
+                      <td>J</td>
+                      <td>K</td>
+                      <td>L</td>
+
+                      <td>M</td>
+                    </tr>
+
+                    <tr>
+                      <td>N</td>
+                      <td>O</td>
+                      <td>P</td>
+
+                      <td>Q</td>
+                      <td>R</td>
+                      <td>S</td>
+
+                      <td>T</td>
+                      <td>U</td>
+                      <td>V</td>
+
+                      <td>W</td>
+                      <td>X</td>
+                      <td>Y</td>
+
+                      <td>Z</td>
+                    </tr>
+                    <script>
+                      document.querySelectorAll(".letterboard td").forEach(e =>
+                        e.addEventListener("click", function() {
+                          if (this.style.backgroundColor == "green") {
+                            this.style.backgroundColor = "red";
+
+                            //window.alert(this.textContent.trim());
+                          } else if (this.style.backgroundColor == "red") {
+                            this.style.backgroundColor = "white";
+                    
+                          } else if (this.style.backgroundColor == "white") {
+                            this.style.backgroundColor = "green";
+                            
+                          } else {
+                            // first click
+                            this.style.backgroundColor = "green";
+                            
+                          }
+                          color_code(
+                            this.textContent.trim(),
+                            this.style.backgroundColor
+                          );
+                        })
+                      );
+
+                      function color_code(letter, color) {
+                        var table = document.getElementById("userGuessTable");
+                        for (var r = 1, n = table.rows.length; r < n; r++) {
+                          // skip header
+                          str = table.rows[r].cells[1].innerHTML;
+                          /*
+                          window.alert(
+                            "this is = " +
+                              table.rows[r].cells[1].innerHTML +
+                              "letter is " +
+                              letter
+                          );
+*/
+                          if (str.includes(letter)) {
+                            /*
+                            window.alert(
+                              str + "contains " + letter + " " + str.charAt(0)
+                            );
+*/
+                            for (var i = 0; i < str.length; i++) {
+                              if (str.charAt(i) === letter) {
+                                table.rows[r].cells[1].innerHTML =
+                                  str.substring(0, i) +
+                                  '<span style="background-color:' +
+                                  color +
+                                  '">' +
+                                  str.charAt(i) +
+                                  "</span>" +
+                                  str.substring(i + 1);
+                              }
+                            }
+                          }
+                          //break;
+                        }
+                      }
+                    </script>
+                  </table>
+                </div>
+
+                <div class="inputDiv">
+                  <form class="form-inline">
+                    <table class="inputTable">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <input
+                              type="text"
+                              name="letter_1"
+                              id="letter_1"
+                              required
+                              pattern="[A-Za-z]"
+                              maxlength="1"
+                              size="2;"
+                              class="form-control"
+                            />
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              name="letter_2"
+                              id="letter_2"
+                              required
+                              pattern="[A-Za-z]"
+                              maxlength="1"
+                              size="2;"
+                              class="form-control"
+                            />
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              name="letter_3"
+                              id="letter_3"
+                              required
+                              pattern="[A-Za-z]"
+                              maxlength="1"
+                              size="2;"
+                              class="form-control"
+                            />
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              name="letter_4"
+                              id="letter_4"
+                              required
+                              pattern="[A-Za-z]"
+                              maxlength="1"
+                              size="2;"
+                              class="form-control"
+                            />
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              name="letter_5"
+                              id="letter_5"
+                              required
+                              pattern="[A-Za-z]"
+                              maxlength="1"
+                              size="2;"
+                              class="form-control"
+                            />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <input type="submit" value="Enter" />
+                  </form>
+                  <script src="input.js"></script>
+                </div>
+              </div>
+            </div>
+            <!-- END USER -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

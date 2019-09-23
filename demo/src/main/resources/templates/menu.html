@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+  lang="en"
+>
+  <head>
+    <meta charset="UTF-8" />
+
+    <link
+      href="../static/css/menu.css"
+      th:href="@{css/menu.css}"
+      rel="stylesheet"
+      media="screen"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <form action="/game" method="GET">
+        <div class="flex dark">
+          <button type="submit" class="bttn-dark">Start a New Game</button>
+        </div>
+      </form>
+
+      <form action="/game/history" method="GET">
+        <div class="flex dark">
+          <button type="submit" class="bttn-dark">View History</button>
+        </div>
+      </form>
+
+      <form action="/logout" method="GET">
+        <div class="flex dark">
+          <button type="submit" class="bttn-dark" onclick="onLogout()">
+            Sign Out
+          </button>
+          <script>
+            function onLogout() {
+              alert("You have logged out");
+            }
+          </script>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

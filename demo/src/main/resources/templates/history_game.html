@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+  lang="en"
+>
+  <head>
+    <meta charset="UTF-8" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      th:href="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css}"
+      href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"
+    />
+
+    <script
+      th:src="@{http://code.jquery.com/jquery.js}"
+      src="http://code.jquery.com/jquery.js"
+    ></script>
+    <script
+      type="text/javascript"
+      th:src="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js}"
+      src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"
+    ></script>
+
+    <link
+      href="../static/css/history.css"
+      th:href="@{/css/history.css}"
+      rel="stylesheet"
+      media="screen"
+    />
+    <link
+      href="../static/css/modal_game.css"
+      th:href="@{/css/modal_game.css}"
+      rel="stylesheet"
+      media="screen"
+    />
+  </head>
+
+  <body>
+    <section>
+      <div class="container">
+        <!-- START COMPUTER -->
+        <div class="col-md-6">
+          <div class="card text-center">
+            <div class="title">
+              <i class="fa fa-robot" aria-hidden="true"></i>
+              <h2>Computer</h2>
+            </div>
+
+            <div class="col-md-12">
+              <table class="wordTable">
+                <tbody>
+                  <tr>
+                    <td>
+                      <input
+                        type="text"
+                        id="comp_letter_1"
+                        style="text-transform:uppercase"
+                        class="form-control"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        id="comp_letter_2"
+                        style="text-transform:uppercase"
+                        class="form-control"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        id="comp_letter_3"
+                        style="text-transform:uppercase"
+                        class="form-control"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        id="comp_letter_4"
+                        style="text-transform:uppercase"
+                        class="form-control"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        id="comp_letter_5"
+                        style="text-transform:uppercase"
+                        class="form-control"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="option">
+              <table class="Table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>WORD</th>
+                    <th>COUNT</th>
+                  </tr>
+                  <tr th:each="log : ${logs}">
+                    <td th:text="${log.numLine}"></td>
+                    <td th:text="${log.word}"></td>
+                    <td th:text="${log.count}"></td>
+                  </tr>
+                </thead>
+                <tbody id="computer_table"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- END COMPUTER -->
+
+        <!-- START USER -->
+        <div class="col-md-6">
+          <div class="card text-center">
+            <div class="title">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <h2>User</h2>
+            </div>
+
+            <div class="col-md-12">
+              <table class="wordTable">
+                <tbody>
+                  <tr>
+                    <td>
+                      <input
+                        id="user_letter_1"
+                        type="text"
+                        style="text-transform:uppercase"
+                        class="form-control"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        id="user_letter_2"
+                        type="text"
+                        style="text-transform:uppercase"
+                        class="form-control"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        id="user_letter_3"
+                        type="text"
+                        style="text-transform:uppercase"
+                        class="form-control"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        id="user_letter_4"
+                        type="text"
+                        style="text-transform:uppercase"
+                        class="form-control"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        id="user_letter_5"
+                        type="text"
+                        style="text-transform:uppercase"
+                        class="form-control"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="option">
+              <table class="Table" id="userGuessTable">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>WORD</th>
+                    <th>COUNT</th>
+                  </tr>
+                  <tr th:each="log : ${logs2}">
+                    <td th:text="${log.numLine}"></td>
+                    <td th:text="${log.word}"></td>
+                    <td th:text="${log.count}"></td>
+                  </tr>
+                </thead>
+
+                <tbody id="user_table"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- END USER -->
+      </div>
+    </section>
+    <script
+      type="text/javascript"
+      src="../static/js/history_game.js"
+      th:src="@{/js/history_game.js}"
+    ></script>
+  </body>
+</html>
